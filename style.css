@@ -1,0 +1,333 @@
+/*reset básico de CSS*/
+:root {
+    font-size: 62.5%;
+    --bg-color: #000;
+    --text-color: hsl(240, 9%, 89%);
+    --text-color-hover: hsl(240, 5%, 73%);
+    --remove-color: hsl(355, 91%, 66%);
+
+    --bg-input: #06181C;
+    --text-input: #7C7C8A;
+
+    --bg-button: #065E7C;
+    --bg-button-hover: #fff;
+
+    --bg-thead: #092D38;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app {
+    max-width: 112rem;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin: 11.5rem 0 8.7rem;
+}
+
+header input {
+    width: min(46rem);
+    padding: 1.6rem;
+
+    background: var(--bg-input);
+    color: var(--text-input);
+
+    border: none;
+    border-radius: .5rem;
+    margin-right: .8rem;
+}
+
+button {
+    padding: 1.5rem 3.2rem;
+    color: #fff;
+    background: var(--bg-button);
+    border: none;
+    border-radius: .5rem;
+
+    cursor: pointer;
+
+    transition: all 450ms linear;
+}
+
+button svg {
+    height: 1.5rem;
+    margin-right: .8rem;
+}
+
+button:hover,
+button:hover svg path {
+    background: #fff;
+    color: var(--bg-button);
+    fill: var(--bg-button);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 2rem;
+}
+
+table thead {
+    background: var(--bg-thead);
+    text-align: left;
+}
+
+/* Pegando o primeiro elemento da linha do cabeçalho da tabela */
+table th:first-child {
+    border-top-left-radius: .5rem;
+}
+
+/* Pegando o último elemento da linha do cabeçalho da tabela */
+table th:last-child {
+    border-top-right-radius: .5rem;
+}
+
+.test tr:last-child>td:last-child {
+    border-bottom-right-radius: .5rem;
+}
+
+.test tr:last-child>td:first-child {
+    border-bottom-left-radius: .5rem;
+}
+
+th {
+    padding: 1.6rem 2.4rem 1.6rem 4rem;
+    text-align: left;
+    font-style: normal;
+}
+
+/* aplica um cor diferente nas linhas impares */
+tbody tr:nth-child(odd) {
+    background: rgba(6, 22, 27, 0.50)
+}
+
+/* aplica um cor diferente nas linhas pares */
+tbody tr:nth-child(even) {
+    background: #06181C;
+}
+
+tbody tr {
+    -webkit-animation: bounce-in-fwd 1.1s both;
+	        animation: bounce-in-fwd 1.1s both;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+
+    gap: 1.6rem;
+}
+
+td.user img {
+    width: 5.6rem;
+    height: 5.6rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a {
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:hover {
+        color: var(--text-color-hover);
+    }
+}
+
+td.user a p {
+    margin-bottom: .8rem;
+}
+
+td {
+    padding: 2.4rem 2.4rem 2.4rem 4rem;
+    text-align: left;
+}
+
+td:last-child button {
+    text-align: left;
+    padding: 0;
+}
+
+td .remove {
+    background: none;
+    border: none;
+
+    color: red;
+    cursor: pointer;
+
+    text-transform: capitalize;
+}
+
+.container {
+    max-width: 100%;
+    height: 60vh;
+    position: relative;
+
+    z-index: -1;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--bg-input);
+
+    border-radius: 0 0 .5rem .5rem;
+
+    transition: all 360ms linear;
+}
+
+.container .content {
+    display: flex;
+    align-items: center;
+}
+
+.container .content img {
+    margin-right: 6rem;
+}
+
+.container .content p {
+
+    color: #4E5455;
+    font-family: "Roboto Mono";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* Animations */
+@-webkit-keyframes bounce-in-fwd {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(0.84);
+              transform: scale(0.84);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(0.95);
+              transform: scale(0.95);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  @keyframes bounce-in-fwd {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(0.84);
+              transform: scale(0.84);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(0.95);
+              transform: scale(0.95);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
