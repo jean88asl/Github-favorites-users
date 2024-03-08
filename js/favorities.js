@@ -104,7 +104,7 @@ export class FavoritesView extends Favorites {
             <img src="https://github.com/jean88asl.png" alt="image of jean88asl">
             <a href="http://" target="_blank" rel="noopener noreferrer">
                 <p>
-                    Jeander Augusto 
+                    Jean Augusto 
                 </p>
                 <span>/jean88asl</span>
             </a>
@@ -116,7 +116,7 @@ export class FavoritesView extends Favorites {
             1564
         </td>
         <td>
-            <button class="remove">remover</button>
+            <button class="remove">remove</button>
         </td>
         `
 
