@@ -1,14 +1,14 @@
 # GitFav
 
-GitFav é uma aplicação onde é possível adicionar ou remover seus usuários favoritos do GitHub e acessar o perfil dos favoritos clicando no nome/username. Todas as informações dos perfis, como o name, user, repositories e followers, são carregadas após efetuar uma busca dos dados na API do GitHub. Outro ponto interessante é que essas informações ficam salvas no navegador, assim quando usuário carrega novamente o site os dados continuam acessíveis, legal né!?
+GitFav is an application where you can add or remove your favorite GitHub users and access the favorites' profiles by clicking on their name or username. All profile information, such as name, user, repositories, and followers, is loaded after searching the data in the GitHub API. Another interesting point is that this information is saved in the browser, so when the user loads the website again, the data remains accessible. Cool, right!?
 
-Primeira página:
+First page:
 
 <p align="center">
   <img alt="projeto DevLinks" src=".github/page1.png" width="100%">
 </p>
 
-Segunda página:
+Second page:
 
 <p align="center">
   <img alt="projeto DevLinks" src=".github/page2.png" width="100%">
@@ -16,7 +16,7 @@ Segunda página:
 
 <hr>
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with stacks:
 
 - HTML e CSS
 - API - GitHub

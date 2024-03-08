@@ -103,12 +103,10 @@ table thead {
     text-align: left;
 }
 
-/* Pegando o primeiro elemento da linha do cabeçalho da tabela */
 table th:first-child {
     border-top-left-radius: .5rem;
 }
 
-/* Pegando o último elemento da linha do cabeçalho da tabela */
 table th:last-child {
     border-top-right-radius: .5rem;
 }
@@ -127,12 +125,10 @@ th {
     font-style: normal;
 }
 
-/* aplica um cor diferente nas linhas impares */
 tbody tr:nth-child(odd) {
     background: rgba(6, 22, 27, 0.50)
 }
 
-/* aplica um cor diferente nas linhas pares */
 tbody tr:nth-child(even) {
     background: #06181C;
 }

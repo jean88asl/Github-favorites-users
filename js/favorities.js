@@ -21,14 +21,14 @@ export class Favorites {
             const userExist = this.entries.find(entry => entry.login === username)
 
             if (userExist) {
-                throw new Error('Usuário já cadastrado!')
+                throw new Error('The user is already registered!')
             }
 
             const user = await GithubUser.search(username) 
             console.log(user)
 
             if (user.login === undefined) {
-                throw new Error('Usuário não encontrado') // aqui é "cuspido" o erro que poderá ser mostrado no catch
+                throw new Error('User not found') 
             }
 
             this.container.style.display = 'none'
@@ -36,7 +36,7 @@ export class Favorites {
             this.update()
             this.save()
 
-        } catch (error) { // Aqui é possível logar o erro no console ou em outro bloco da aplicação como no exemplo um alert
+        } catch (error) { 
             alert(error.message)
         }
     }
@@ -80,7 +80,7 @@ export class FavoritesView extends Favorites {
             const row = this.createRow()
 
             row.querySelector('.user img').src = `https://github.com/${user.login}.png`
-            row.querySelector('.user img').alt = `imagem de ${user.login}`
+            row.querySelector('.user img').alt = `image of ${user.login}`
             row.querySelector('.user a').href = `http://github.com/${user.login}`
             row.querySelector('.user p').textContent = user.name
             row.querySelector('.user span').textContent = user.login
@@ -88,7 +88,7 @@ export class FavoritesView extends Favorites {
             row.querySelector('.followers').innerText = user.followers
 
             row.querySelector('.remove').onclick = () => {
-                const isOk = confirm('Tem certeza que deseja remover esse usuário?')
+                const isOk = confirm('Remove this user?')
 
                 if (isOk) this.delete(user)
             }
@@ -101,7 +101,7 @@ export class FavoritesView extends Favorites {
 
         tr.innerHTML = `
         <td class="user">
-            <img src="https://github.com/jean88asl.png" alt="imagem de jean88asl">
+            <img src="https://github.com/jean88asl.png" alt="image of jean88asl">
             <a href="http://" target="_blank" rel="noopener noreferrer">
                 <p>
                     Jeander Augusto 
